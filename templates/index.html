@@ -1,0 +1,475 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AeroSync Manager</title>
+    <link rel="stylesheet" href="../static/css/index.css">
+    <link rel="stylesheet" href="../static/css/navbar.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+</head>
+
+<body>
+
+<nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+    <div class="container">
+        <a class="navbar-brand" href="/">ASM Airport</a>
+        <div class="navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="flightInfo">Flights</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="dining">Dine</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="shopping">Shop</a>
+                </li>
+            </ul>
+
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="" id="languageDropdown" role="button"
+                       data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <img src="../static/images/UK_Flag.svg" alt="Language" class="rounded-circle flag-icon">
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="languageDropdown">
+                        <a class="dropdown-item" href="/">English</a>
+                        <a class="dropdown-item" href="en=it">Italian</a>
+                    </div>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="logout" id="userIconLink">
+                        <img src="../static/images/icon.png" alt="User" class="rounded-circle user-icon small-icon"
+                             id="userIcon">
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<div id="background-slideshow">
+    <div class="background-slide active" style="background-image: url('../static/images/f22.jpg');"></div>
+    <div class="background-slide" style="background-image: url('../static/images/home_1.jpg');"></div>
+    <div class="background-slide" style="background-image: url('../static/images/home_2.jpg');"></div>
+    <div class="background-slide" style="background-image: url('../static/images/home_3.jpg');"></div>
+    <div class="background-slide" style="background-image: url('../static/images/home_4.jpeg');"></div>
+    <div class="background-slide" style="background-image: url('../static/images/home_5.jpeg');"></div>
+</div>
+
+<form class="search-form">
+    <input type="search" value="" placeholder="Search for flights" class="search-input">
+    <button type="submit" class="search-button">
+        <svg class="submit-button">
+            <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#search"></use>
+        </svg>
+    </button>
+    <div class="search-icons">
+        <button type="button" class="icon-button" data-tooltip="Arrival">
+            <svg class="icon-svg" xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 640 512">
+                <path d="M624 448H16c-8.84 0-16 7.16-16 16v32c0 8.84 7.16 16 16 16h608c8.84 0 16-7.16 16-16v-32c0-8.84-7.16-16-16-16zM44.81 205.66l88.74 80a62.607 62.607 0 0 0 25.47 13.93l287.6 78.35c26.48 7.21 54.56 8.72 81 1.36 29.67-8.27 43.44-21.21 47.25-35.71 3.83-14.5-1.73-32.71-23.37-54.96-19.28-19.82-44.35-32.79-70.83-40l-97.51-26.56L282.8 30.22c-1.51-5.81-5.95-10.35-11.66-11.91L206.05.58c-10.56-2.88-20.9 5.32-20.71 16.44l47.92 164.21-102.2-27.84-27.59-67.88c-1.93-4.89-6.01-8.57-11.02-9.93L52.72 64.75c-10.34-2.82-20.53 5-20.72 15.88l.23 101.78c.19 8.91 6.03 17.34 12.58 23.25z"/>
+            </svg>
+        </button>
+        <button type="button" class="icon-button" data-tooltip="Departure">
+            <svg class="icon-svg" xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 640 512"></style>
+                <path d="M624 448H16c-8.84 0-16 7.16-16 16v32c0 8.84 7.16 16 16 16h608c8.84 0 16-7.16 16-16v-32c0-8.84-7.16-16-16-16zM80.55 341.27c6.28 6.84 15.1 10.72 24.33 10.71l130.54-.18a65.62 65.62 0 0 0 29.64-7.12l290.96-147.65c26.74-13.57 50.71-32.94 67.02-58.31 18.31-28.48 20.3-49.09 13.07-63.65-7.21-14.57-24.74-25.27-58.25-27.45-29.85-1.94-59.54 5.92-86.28 19.48l-98.51 49.99-218.7-82.06a17.799 17.799 0 0 0-18-1.11L90.62 67.29c-10.67 5.41-13.25 19.65-5.17 28.53l156.22 98.1-103.21 52.38-72.35-36.47a17.804 17.804 0 0 0-16.07.02L9.91 230.22c-10.44 5.3-13.19 19.12-5.57 28.08l76.21 82.97z"/>
+            </svg>
+        </button>
+    </div>
+</form>
+
+<form class="API"></form>
+
+<div id="weather-container">
+</div>
+
+<div class="container converter-container">
+    <h2 class="text-center mb-4">Currency Converter</h2>
+    <div class="form-group">
+        <label for="fromCurrency">From Currency:</label>
+        <select class="form-control" id="fromCurrency">
+        </select>
+    </div>
+    <div class="form-group">
+        <label for="toCurrency">To Currency:</label>
+        <select class="form-control" id="toCurrency">
+            <!-- Options will be dynamically added using JavaScript -->
+        </select>
+    </div>
+    <div class="form-group">
+        <label for="amount">Amount:</label>
+        <input type="number" class="form-control" id="amount" placeholder="Enter amount">
+    </div>
+    <button class="btn btn-primary btn-block" onclick="convertCurrency()">Convert</button>
+    <div class="result" style="display: none;" id="currencyResultContainer">
+        <h4>Result:</h4>
+        <p id="result"></p>
+    </div>
+</div>
+</form>
+
+<section class="section">
+    <div class="header">
+        <h2 class="highlights-title">Highlights</h2>
+        <p class="highlights-subtitle">Find out more about the latest events in the country.</p>
+    </div>
+    <div class="carousel-container">
+        <button id="highlights-scroll-left" class="scroll-button left" aria-hidden="true">‹</button>
+        <div id="highlights-carousel" class="carousel">
+            <div class="list">
+                <div class="card"
+                     onclick="openPopup('Beirut Music Festival', 'Revel in the vibrant Beirut Music Festival, a spectacular celebration of local and international talent. Held in the heart of the city, this event features a mix of genres, from traditional Lebanese music to contemporary beats, offering a musical journey through Lebanons rich cultural tapestry. Enjoy live performances, interactive workshops, and a bustling food market showcasing local delicacies.', '../static/images/music_festival.jpg');">
+                    <img src="../static/images/music_festival.jpg" alt="Highlight Image">
+                    <div class="card-content">
+                        <h3 class="card-title">Beirut Music Festival</h3>
+                        <p class="card-description">Revel in the vibrant Beirut Music Festival, a spectacular
+                            celebration of local and international talent.</p>
+                    </div>
+                </div>
+
+                <div class="card"
+                     onclick="openPopup('Cedars of God Hiking Adventure', 'Explore the majestic Cedars of God, a UNESCO World Heritage site in the Bsharri region. Join a guided hiking tour through these ancient forests, home to some of the oldest cedar trees in the world. The hike offers breathtaking views of the surrounding mountains and valleys, culminating in a picnic featuring local produce.', '../static/images/cedars.jpg');">
+                    <img src="../static/images/cedars.jpg" alt="Highlight Image">
+                    <div class="card-content">
+                        <h3 class="card-title">Cedars of God Hiking Adventure</h3>
+                        <p class="card-description">Explore the majestic Cedars of God, a UNESCO World Heritage site in
+                            the Bsharri region.</p>
+                    </div>
+                </div>
+                <div class="card"
+                     onclick="openPopup('Byblos Historical Tours', 'Step back in time with guided historical tours of Byblos, one of the worlds oldest continuously inhabited cities. Discover ancient ruins, Phoenician temples, and medieval fortresses, each telling a story of Lebanons rich history. The tour includes a visit to the charming Byblos Souk, where artisans sell traditional crafts and souvenirs.', '../static/images/byblos.jpg');">
+                    <img src="../static/images/byblos.jpg" alt="Highlight Image">
+                    <div class="card-content">
+                        <h3 class="card-title">Byblos Historical Tours</h3>
+                        <p class="card-description">Step back in time with guided historical tours of Byblos, one of the
+                            world's oldest continuously inhabited cities.</p>
+                    </div>
+                </div>
+                <div class="card"
+                     onclick="openPopup('Lebanese Wine and Vineyard Tour', 'Discover Lebanons renowned wineries with a guided tour through picturesque vineyards. Learn about traditional wine-making techniques and sample a variety of local wines, from robust reds to crisp whites. The tour includes visits to several wineries in the Bekaa Valley, each with its own unique story and flavor profile.', '../static/images/wine.jpg');">
+                    <img src="../static/images/wine.jpg" alt="Highlight Image">
+                    <div class="card-content">
+                        <h3 class="card-title">Lebanese Wine and Vineyard Tour</h3>
+                        <p class="card-description">Discover Lebanon's renowned wineries with a guided tour through
+                            picturesque vineyards. </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <button id="highlights-scroll-right" class="scroll-button right">›</button>
+    </div>
+</section>
+
+<section class="section">
+    <div class="carousel-container">
+        <button id="deals-scroll-left" class="scroll-button left" aria-hidden="true">‹</button>
+        <div id="deals-carousel" class="carousel">
+            <div class="list">
+                <div class="card"
+                     onclick="openPopup('Gourmet Getaway in Beirut', 'Indulge in a luxurious dining experience at Beiruts top-ratedrestaurant, Le Gourmet Libanais. Enjoy a 5-course meal featuring the finest Mediterraneanflavors, with each dish expertly crafted by renowned chefs. Perfect for special occasions ora lavish night out.', '../static/images/getaway.jpg');">
+                    <img src="../static/images/getaway.jpg" alt="Highlight Image">
+                    <div class="card-content">
+                        <h3 class="card-title">Gourmet Getaway in Beirut</h3>
+                        <p class="card-description">Indulge in a luxurious dining experience at Beirut's top-rated
+                            restaurant, 'Le Gourmet Libanais'.</p>
+                        <p>StartDate: 2023-12-01</p>
+                        <p>EndDate: 2023-12-31</p>
+                    </div>
+                </div>
+
+                <div class="card"
+                     onclick="openPopup('Historic Byblos Escape', 'Experience the charm of ancient Byblos with our exclusive weekend getaway package. Includes a guided tour of historic sites, a stay at the boutique Byblos Hotel, and a complimentary wine-tasting session featuring local Lebanese wines.', '../static/images/byblos2.jpg');">
+                    <img src="../static/images/byblos2.jpg" alt="Highlight Image">
+                    <div class="card-content">
+                        <h3 class="card-title">Historic Byblos Escape</h3>
+                        <p class="card-description">Experience the charm of ancient Byblos with our exclusive weekend
+                            getaway package.</p>
+                        <p>StartDate: 2023-12-05</p>
+                        <p>EndDate: 2024-01-05</p>
+                    </div>
+                </div>
+                <div class="card"
+                     onclick="openPopup('VIP Shopping Spree', 'Enjoy a VIP shopping experience in Beiruts most exclusive fashion districts. This deal includes personal shopping assistance, access to private showings, and a 20% discount on all purchases over $500 at participating luxury boutiques.', '../static/images/vip_shopping.webp');">
+                    <img src="../static/images/vip_shopping.webp" alt="Highlight Image">
+                    <div class="card-content">
+                        <h3 class="card-title">VIP Shopping Spree</h3>
+                        <p class="card-description">Enjoy a VIP shopping experience in Beirut's most exclusive fashion
+                            districts.</p>
+                        <p>StartDate: 2023-12-10</p>
+                        <p>EndDate: 2024-01-10</p>
+                    </div>
+                </div>
+                <div class="card"
+                     onclick="openPopup('Cedar Mountains Hiking Adventure', 'Embark on an exhilarating hiking adventure in the Cedar Mountains. This package includes a guided trek, overnight accommodation in an eco-lodge, and a traditional Lebanese dinner under the stars.', '../static/images/hiking.jpg');">
+                    <img src="../static/images/hiking.jpg" alt="Highlight Image">
+                    <div class="card-content">
+                        <h3 class="card-title">Cedar Mountains Hiking Adventure</h3>
+                        <p class="card-description">Embark on an exhilarating hiking adventure in the Cedar
+                            Mountains.</p>
+                        <p>StartDate: 2023-12-15</p>
+                        <p>EndDate: 2023-12-20</p>
+                    </div>
+                </div>
+                <div class="card"
+                     onclick="openPopup('Exclusive Night at the Opera', 'Experience an unforgettable evening at the renowned Beirut Opera House. This exclusive package includes premium seating for the latest opera performance, a backstage tour, and a post-show meet-and-greet with the cast.', '../static/images/opera.jpg');">
+                    <img src="../static/images/opera.jpg" alt="Highlight Image">
+                    <div class="card-content">
+                        <h3 class="card-title">Exclusive Night at the Opera</h3>
+                        <p class="card-description">Experience an unforgettable evening at the renowned Beirut Opera
+                            House.</p>
+                        <p>StartDate: 2023-12-20</p>
+                        <p>EndDate: 2024-01-20</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <button id="deals-scroll-right" class="scroll-button right">›</button>
+    </div>
+    <div class="header">
+        <h2 class="deals-title">Deals For You</h2>
+        <p class="deals-subtitle">From ASM Exclusives and unique experiences, to amazing dining and shopping deals,
+            there is something for everyone.</p>
+    </div>
+</section>
+
+<div class="modal fade" id="popupModal" tabindex="-1" role="dialog" aria-labelledby="popupModalLabel"
+     aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="popupModalLabel"></h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <img src="" alt="Popup Image" id="popupImage" class="img-fluid mb-2">
+                <p id="popupModalBody"></p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="tab-container">
+    <div class="tab-buttons">
+        <button class="tab-button active" onclick="openTab(event, 'tab-Parking')">Parking</button>
+        <button class="tab-button" onclick="openTab(event, 'tab-Hotel')">Hotel</button>
+        <button class="tab-button" onclick="openTab(event, 'tab-Flight')">Flight</button>
+        <div class="tab-indicator"></div>
+    </div>
+    <div class="tab-content" id="tab-Parking" style="display:none;">
+        <h2 class="mb-4" id="header-text">Park Search</h2>
+        <form id="parkingForm">
+            <div class="form-row">
+                <div class="form-group col-md-6">
+                    <label for="fromDate">From Date</label>
+                    <input type="datetime-local" class="form-control" id="fromDate">
+                </div>
+                <div class="form-group col-md-6">
+                    <label for="toDate">To Date</label>
+                    <input type="datetime-local" class="form-control" id="toDate">
+                </div>
+            </div>
+            <button type="submit" class="btn btn-primary">Search</button>
+        </form>
+
+        <div id="parkingResults" style="display: none;">
+            <div id="resultsContainer">
+            </div>
+        </div>
+    </div>
+    <div class="tab-content" id="tab-Hotel" style="display:none;">
+        <h2 class="mb-4">Hotel Search</h2>
+        <form>
+            <div class="form-row">
+                <div class="form-group col-md-8">
+                    <label for="location">Location</label>
+                    <input type="text" class="form-control" id="location"
+                           placeholder="e.g. country, city, district or landmark">
+                </div>
+            </div>
+
+            <div class="form-row">
+                <div class="form-group col-md-4">
+                    <label for="checkInDate">Check-in Date</label>
+                    <input type="date" class="form-control" id="checkInDate">
+                </div>
+                <div class="form-group col-md-4">
+                    <label for="checkOutDate">Check-out Date</label>
+                    <input type="date" class="form-control" id="checkOutDate">
+                </div>
+            </div>
+
+            <div class="form-row">
+                <div class="form-group col-md-4">
+                    <label for="numberOfRooms">Number of Rooms</label>
+                    <div class="input-group">
+                        <div class="input-group-prepend">
+                            <button class="btn btn-outline-secondary" type="button" id="decrementRooms">-</button>
+                        </div>
+                        <input type="text" class="form-control" id="numberOfRooms" value="1">
+                        <div class="input-group-append">
+                            <button class="btn btn-outline-secondary" type="button" id="incrementRooms">+</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group col-md-4">
+                    <label for="numberOfAdults">Number of Adults</label>
+                    <div class="input-group">
+                        <div class="input-group-prepend">
+                            <button class="btn btn-outline-secondary" type="button" id="decrementAdults">-</button>
+                        </div>
+                        <input type="text" class="form-control" id="numberOfAdults" value="1">
+                        <div class="input-group-append">
+                            <button class="btn btn-outline-secondary" type="button" id="incrementAdults">+</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group col-md-4">
+                    <label for="numberOfKids">Number of Kids</label>
+                    <div class="input-group">
+                        <div class="input-group-prepend">
+                            <button class="btn btn-outline-secondary" type="button" id="decrementKids">-</button>
+                        </div>
+                        <input type="text" class="form-control" id="numberOfKids" value="0">
+                        <div class="input-group-append">
+                            <button class="btn btn-outline-secondary" type="button" id="incrementKids">+</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <button type="submit" class="btn btn-primary">Search</button>
+        </form>
+    </div>
+    <div class="tab-content" id="tab-Flight" style="display:none;">
+        <h2 class="mb-4">Flight Search</h2>
+        <form>
+            <div class="form-row">
+                <div class="form-group col-md-4">
+                    <label for="from">From</label>
+                    <input type="text" class="form-control" id="from" placeholder="Departure" autocomplete="off">
+                    <div id="searchResults" class="search-results"></div>
+                </div>
+                <div class="form-group col-md-4">
+                    <label for="to">To</label>
+                    <input type="text" class="form-control" id="to" placeholder="Destination" autocomplete="off">
+                    <div id="toSearchResults" class="search-results"></div>
+                </div>
+            </div>
+
+            <div class="form-row">
+                <div class="form-group col-md-4">
+                    <label class="mr-2">Trip Type:</label>
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" name="tripType" id="oneway" checked>
+                        <label class="form-check-label" for="oneway">One-way</label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" name="tripType" id="return">
+                        <label class="form-check-label" for="return">Return</label>
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-row">
+                <div class="form-group col-md-4">
+                    <label for="departDate">Departure Date</label>
+                    <input type="date" class="form-control" id="departDate">
+                </div>
+                <div class="form-group col-md-4">
+                    <label for="returnDate">Return Date</label>
+                    <input type="date" class="form-control" id="returnDate" disabled>
+                </div>
+            </div>
+
+            <button type="submit" class="btn btn-primary">Search</button>
+        </form>
+    </div>
+</div>
+
+<footer class="site-footer">
+    <div class="footer-content">
+        <div class="footer-heading">
+            STAY IN TOUCH WITH ASM AIRPORT
+        </div>
+        <div class="footer-social">
+            <a class="fb" href="https://www.facebook.com"><img src="../static/images/FB2.png" alt="Faceboock"></a>
+            <a href="https://www.instagram.com"><img src="../static/images/insta.png" alt="Instagram"></a>
+            <a class="ln" href="https://www.linkedin.com"><img src="../static/images/linkin.png" alt="LinkedIn"></a>
+            <a class="tw" href="https://www.twitter.com"><img src="../static/images/tw.png" alt="Twitter"></a>
+            <a href="https://www.youtube.com"><img src="../static/images/yt.png" alt="YouTube"></a>
+        </div>
+        <div class="footer-links">
+            <div class="link-column">
+                <a href="#about-us">About Us</a>
+                <a href="#contact">Contact Us</a>
+                <a href="#careers">Careers</a>
+                <a href="#corporate">Corporate</a>
+            </div>
+            <div class="link-column">
+                <a href="#faq">FAQs</a>
+                <button class="btn btn-primary" id="feedbackButton">Feedback</button>
+                <a href="#terms">Conditions of Use</a>
+                <a href="#privacy">Privacy Policy</a>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<div class="modal fade" id="feedbackModal" tabindex="-1" role="dialog" aria-labelledby="feedbackModalLabel"
+     aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="feedbackModalLabel">Feedback</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <form id="feedbackForm">
+                    <div class="form-group">
+                        <label for="rating">Rating:</label>
+                        <div class="rating-container">
+                            <span class="rating-star" data-rating="1">&#9733;</span>
+                            <span class="rating-star" data-rating="2">&#9733;</span>
+                            <span class="rating-star" data-rating="3">&#9733;</span>
+                            <span class="rating-star" data-rating="4">&#9733;</span>
+                            <span class="rating-star" data-rating="5">&#9733;</span>
+                        </div>
+                        <input type="hidden" id="rating" name="rating" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="comment">Comment (optional):</label>
+                        <textarea class="form-control" id="comment" name="comment" rows="3"></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Submit</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div id="floatingMessageBox" class="message-box">
+</div>
+
+<svg xmlns="http://www.w3.org/2000/svg" width="0" height="0" display="none">
+    <symbol id="search" viewBox="0 0 32 32">
+        <path d="M 19.5 3 C 14.26514 3 10 7.2651394 10 12.5 C 10 14.749977 10.810825 16.807458 12.125 18.4375 L 3.28125 27.28125 L 4.71875 28.71875 L 13.5625 19.875 C 15.192542 21.189175 17.250023 22 19.5 22 C 24.73486 22 29 17.73486 29 12.5 C 29 7.2651394 24.73486 3 19.5 3 z M 19.5 5 C 23.65398 5 27 8.3460198 27 12.5 C 27 16.65398 23.65398 20 19.5 20 C 15.34602 20 12 16.65398 12 12.5 C 12 8.3460198 15.34602 5 19.5 5 z"/>
+    </symbol>
+</svg>
+
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script src="../static/js/index.js"></script>
+<script src="../static/js/navbar.js"></script>
+</body>
+</html>

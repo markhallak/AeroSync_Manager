@@ -1,0 +1,67 @@
+body {
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+h2{
+    background-color: white;
+    text-align: center;
+    margin-top: 70px!important;
+}
+
+.carousel .card img {
+    height: 225px; /* Set your desired height */
+    width: auto;   /* Maintain aspect ratio */
+}
+
+.carousel .card {
+    border-radius: 15px; /* Set your desired border-radius value */
+    overflow: hidden;   /* Ensure rounded corners are applied */
+}
+
+.favorite-button {
+    cursor: pointer;
+    font-size: 24px;
+    color: grey;
+    background-color: white;
+}
+
+.favorite-button.active {
+    color: red;
+}
+
+h2 {
+    color: black;
+}
+
+#image-container img{
+    width: 100%;
+    height: 700px;
+}
+
+.search-button {
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    top: 10px;
+    left: 11px;
+    height: 20px;
+    width: 20px;
+    padding: 0;
+    margin: 0;
+    border: none;
+    background: none;
+    outline: none!important;
+    cursor: pointer;
+  
+    & svg {
+      width: 20px;
+      height: 20px;
+      fill: #5a6674;
+    }
+  }
+
+  .user-icon.small-icon {
+    margin-top: 4px;
+    }

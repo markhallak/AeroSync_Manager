@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="stylesheet" href="../static/css/dining.css">
+    <link rel="stylesheet" href="../static/css/navbar.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <title>Shopping</title>
+</head>
+<body>
+
+<nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+    <div class="container">
+        <a class="navbar-brand" href="/">ASM Airport</a>
+        <div class="navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="flightInfo">Flights</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="dining">Dine</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="shopping">Shop</a>
+                </li>
+            </ul>
+
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="" id="languageDropdown" role="button"
+                       data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <img src="../static/images/UK_Flag.svg" alt="Language" class="rounded-circle flag-icon">
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="languageDropdown">
+                        <a class="dropdown-item" href="/">English</a>
+                        <a class="dropdown-item" href="en=it">Italian</a>
+                    </div>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="wishlist">
+                        <img src="../static/images/heart-ico-navbar.png" alt="User" class="heart-ico">
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="logout" id="userIconLink">
+                        <img src="../static/images/icon.png" alt="User" class="rounded-circle user-icon small-icon"
+                             id="userIcon">
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<div id="background-slideshow">
+    <div class="background-slide active" style="background-image: url('../static/images/shopping.jpg')"></div>
+
+</div>
+<h2>SHOPPING DIRECTORY</h2>
+<form class="search-form">
+    <input type="search" value="" placeholder="Search for Shops" class="search-input">
+    <button type="submit" class="search-button">
+        <svg class="submit-button">
+            <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#search"></use>
+        </svg>
+    </button>
+    <div class="search-icons">
+        <button type="button" class="icon-button" data-tooltip="Arrival">
+            <svg xmlns="http://www.w3.org/2000/svg" height="16" width="14" viewBox="0 0 448 512">
+                <!--!Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2023 Fonticons, Inc.-->
+                <path d="M388.3 104.1a4.7 4.7 0 0 0 -4.4-4c-2 0-37.2-.8-37.2-.8s-21.6-20.8-29.6-28.8V503.2L442.8 472S388.7 106.5 388.3 104.1zM288.7 70.5a116.7 116.7 0 0 0 -7.2-17.6C271 32.9 255.4 22 237 22a15 15 0 0 0 -4 .4c-.4-.8-1.2-1.2-1.6-2C223.4 11.6 213 7.6 200.6 8c-24 .8-48 18-67.3 48.8-13.6 21.6-24 48.8-26.8 70.1-27.6 8.4-46.8 14.4-47.2 14.8-14 4.4-14.4 4.8-16 18-1.2 10-38 291.8-38 291.8L307.9 504V65.7a41.7 41.7 0 0 0 -4.4 .4S297.9 67.7 288.7 70.5zM233.4 87.7c-16 4.8-33.6 10.4-50.8 15.6 4.8-18.8 14.4-37.6 25.6-50 4.4-4.4 10.4-9.6 17.2-12.8C232.2 54.9 233.8 74.5 233.4 87.7zM200.6 24.4A27.5 27.5 0 0 1 215 28c-6.4 3.2-12.8 8.4-18.8 14.4-15.2 16.4-26.8 42-31.6 66.5-14.4 4.4-28.8 8.8-42 12.8C131.3 83.3 163.8 25.2 200.6 24.4zM154.2 244.6c1.6 25.6 69.3 31.2 73.3 91.7 2.8 47.6-25.2 80.1-65.7 82.5-48.8 3.2-75.7-25.6-75.7-25.6l10.4-44s26.8 20.4 48.4 18.8c14-.8 19.2-12.4 18.8-20.4-2-33.6-57.2-31.6-60.8-86.9-3.2-46.4 27.2-93.3 94.5-97.7 26-1.6 39.2 4.8 39.2 4.8L221.4 225.4s-17.2-8-37.6-6.4C154.2 221 153.8 239.8 154.2 244.6zM249.4 82.9c0-12-1.6-29.2-7.2-43.6 18.4 3.6 27.2 24 31.2 36.4Q262.6 78.7 249.4 82.9z"/>
+            </svg>
+        </button>
+        <button type="button" class="icon-button" data-tooltip="Departure">
+            <svg xmlns="http://www.w3.org/2000/svg" height="16" width="18" viewBox="0 0 576 512">
+                <!--!Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2023 Fonticons, Inc.-->
+                <path d="M0 24C0 10.7 10.7 0 24 0H69.5c22 0 41.5 12.8 50.6 32h411c26.3 0 45.5 25 38.6 50.4l-41 152.3c-8.5 31.4-37 53.3-69.5 53.3H170.7l5.4 28.5c2.2 11.3 12.1 19.5 23.6 19.5H488c13.3 0 24 10.7 24 24s-10.7 24-24 24H199.7c-34.6 0-64.3-24.6-70.7-58.5L77.4 54.5c-.7-3.8-4-6.5-7.9-6.5H24C10.7 48 0 37.3 0 24zM128 464a48 48 0 1 1 96 0 48 48 0 1 1 -96 0zm336-48a48 48 0 1 1 0 96 48 48 0 1 1 0-96z"/>
+            </svg>
+        </button>
+    </div>
+</form>
+
+<div class="filter-container">
+    <button class="filter-button" onclick="toggleFilter(this)"> Filters +</button>
+    <div class="filter-options">
+        <button class="filter-category" data-category="beauty"> Beauty</button>
+        <button class="filter-category" data-category="electronics"> Electronics</button>
+        <button class="filter-category" data-category="clothes"> Clothes</button>
+        <button class="filter-category" data-category="edibles"> Edibles</button>
+        <button class="filter-category" data-category="jewelry"> Jewelry</button>
+        <button class="filter-category" data-category="toys"> Toys</button>
+        <button class="filter-category" data-category="books"> Books</button>
+    </div>
+    <div class="filter-buttons">
+        <button class="apply-button" onclick="applyFilters()"> Apply</button>
+        <button class="reset-button" onclick="resetFilters()"> Reset</button>
+    </div>
+</div>
+
+<div class="container">
+    <div class="box-container">
+        <div class="box" data-category="beauty">
+            <div class="image">
+                <img src="../static/images/perfume.jpeg" alt="">
+            </div>
+            <div class="content">
+                <h3> Perfume Haven </h3>
+                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quod, adipisci!</p>
+                <a href="perfume-haven" class="btn">Shop</a>
+            </div>
+        </div>
+        <div class="box" data-category="clothes">
+            <div class="image">
+                <img src="../static/images/clothes.png" alt="">
+            </div>
+            <div class="content">
+                <h3> Wardobe Dream </h3>
+                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quod, adipisci!</p>
+                <a href="#" class="btn">Shop</a>
+            </div>
+        </div>
+        <div class="box" data-category="beauty">
+            <div class="image">
+                <img src="../static/images/makeup.webp" alt="">
+            </div>
+            <div class="content">
+                <h3> Wakeup Makeup </h3>
+                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quod, adipisci!</p>
+                <a href="#" class="btn">Shop</a>
+            </div>
+        </div>
+        <div class="box" data-category="toys">
+            <div class="image">
+                <img src="../static/images/gift.jpg" alt="">
+            </div>
+            <div class="content">
+                <h3> Gift Shop </h3>
+                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quod, adipisci!</p>
+                <a href="#" class="btn">Shop</a>
+            </div>
+        </div>
+        <div class="box" data-category="beauty">
+            <div class="image">
+                <img src="../static/images/dutyfree.webp" alt="">
+            </div>
+            <div class="content">
+                <h3> Duty Free </h3>
+                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quod, adipisci!</p>
+                <a href="#" class="btn">Shop</a>
+            </div>
+        </div>
+        <div class="box" data-category="edibles">
+            <div class="image">
+                <img src="../static/images/chocolate.jpg" alt="">
+            </div>
+            <div class="content">
+                <h3> Chocolate Factory </h3>
+                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quod, adipisci!</p>
+                <a href="#" class="btn">Shop</a>
+            </div>
+        </div>
+        <div class="box" data-category="jewelry">
+            <div class="image">
+                <img src="../static/images/watches.webp" alt="">
+            </div>
+            <div class="content">
+                <h3> The Hour </h3>
+                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quod, adipisci!</p>
+                <a href="#" class="btn">Shop</a>
+            </div>
+        </div>
+        <div class="box" data-category="electronics">
+            <div class="image">
+                <img src="../static/images/virgin.jpg" alt="">
+            </div>
+            <div class="content">
+                <h3> Virgin Megastore </h3>
+                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quod, adipisci!</p>
+                <a href="#" class="btn">Shop</a>
+            </div>
+        </div>
+        <div class="box" data-category="jewelry">
+            <div class="image">
+                <img src="../static/images/pandora.png" alt="">
+            </div>
+            <div class="content">
+                <h3> Pandora </h3>
+                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quod, adipisci!</p>
+                <a href="#" class="btn">Shop</a>
+            </div>
+        </div>
+        <div class="box" data-category="clothes">
+            <div class="image">
+                <img src="../static/images/hermes.jpg" alt="">
+            </div>
+            <div class="content">
+                <h3> Hermes </h3>
+                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quod, adipisci!</p>
+                <a href="#" class="btn">Shop</a>
+
+            </div>
+        </div>
+        <div class="box" data-category="clothes">
+            <div class="image">
+                <img src="../static/images/shoes.jpg" alt="">
+            </div>
+            <div class="content">
+                <h3> ShoeShop </h3>
+                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quod, adipisci!</p>
+                <a href="#" class="btn">Shop</a>
+            </div>
+        </div>
+        <div class="box" data-category="books">
+            <div class="image">
+                <img src="../static/images/books.webp" alt="">
+            </div>
+            <div class="content">
+                <h3> Barnes & Novles </h3>
+                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quod, adipisci!</p>
+                <a href="#" class="btn">Shop</a>
+            </div>
+        </div>
+        <div class="box" data-category="toys">
+            <div class="image">
+                <img src="../static/images/joueclub.jpeg" alt="">
+            </div>
+            <div class="content">
+                <h3> JoueClub </h3>
+                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quod, adipisci!</p>
+                <a href="#" class="btn">Shop</a>
+            </div>
+        </div>
+        <div class="box" data-category="edibles">
+            <div class="image">
+                <img src="../static/images/candy.jpg" alt="">
+            </div>
+            <div class="content">
+                <h3> Crazy Candy </h3>
+                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quod, adipisci!</p>
+                <a href="#" class="btn">Shop</a>
+            </div>
+        </div>
+        <div class="box" data-category="jewelry">
+            <div class="image">
+                <img src="../static/images/cartier.jpg" alt="">
+            </div>
+            <div class="content">
+                <h3> Cartier </h3>
+                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quod, adipisci!</p>
+                <a href="#" class="btn">Shop</a>
+            </div>
+        </div>
+    </div>
+    <div id="load-more"> load more</div>
+</div>
+
+<script src="../static/js/dining.js"></script>
+<script src="../static/js/navbar.js"></script>
+</body>
+</html>
+
+

@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flight Info</title>
+    <link rel="stylesheet" href="../static/css/navbar.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="../static/css/flight_info.css">
+  </head>
+  <body>
+  
+  
+<nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+    <div class="container">
+        <a class="navbar-brand" href="/">ASM Airport</a>
+        <div class="navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="flightInfo">Flights</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="dining">Dine</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="shopping">Shop</a>
+                </li>
+            </ul>
+
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="" id="languageDropdown" role="button"
+                       data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <img src="../static/images/UK_Flag.svg" alt="Language" class="rounded-circle flag-icon">
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="languageDropdown">
+                        <a class="dropdown-item" href="/">English</a>
+                        <a class="dropdown-item" href="en=it">Italian</a>
+                    </div>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="logout" id="userIconLink">
+                        <img src="../static/images/icon.png" alt="User" class="rounded-circle user-icon small-icon"
+                             id="userIcon">
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<div id="image-container">
+    <img src="../static/images/Niew project (1).jpg" alt="Header Image">
+    <section id="search-section">
+        <div id="header-container">
+            <h2>PASSENGER ARRIVALS</h2>
+            <p>Keep track of arriving passenger flights with live updates.</p>
+        </div>
+        <form id="search-form">
+            <input type="text" id="flight-search-input" name="flightSearchInput" oninput="filterFlights()" placeholder="Flight Number, Country, or City:">
+
+            <select id="scheduled-day" name="date" onchange="filterFlights()" >
+
+                <option value="Today">Today</option>
+                <option value="Tomorrow">Tomorrow</option>
+                <option value="Day after tomorrow">Day after tomorrow</option>
+            </select>
+
+            <select id="scheduled-time" name="time" onchange="filterFlights()">
+            </select>
+
+            <div class="toggle-switch-container">
+                <span class="toggle-label">Arrival</span>
+                <div id="flight-type-toggle" class="toggle-switch">
+                    <div class="toggle-switch-slider"></div>
+                </div>
+                <span class="toggle-label">Departure</span>
+            </div>
+        </form>
+        <div id="search-results"></div>
+    </section>
+
+    <div id="lightbox" class="hidden" style="display:none">
+        <div id="modal-content">
+            <span class="close-button" onclick="closeLightbox()">&times;</span>
+            <div id="in-flight-details"></div>
+            <div class="lightbox-header-container">
+                <button class="lightbox-header" id="track-btn"> Track</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div id="loading-indicator">
+    <img src="../static/images/loading.gif" alt="Loading..."/>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script src="../static/js/flight_info.js"></script>
+<script src="../static/js/navbar.js"></script>
+
+</body>
+</html>

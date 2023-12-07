@@ -1,0 +1,474 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Beirut International Airport</title>
+    <link rel="stylesheet" href="../static/css/index.css">
+    <link rel="stylesheet" href="../static/css/navbar.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+</head>
+
+<body>
+
+<nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+    <div class="container">
+        <a class="navbar-brand" href="/">ASM Airport</a>
+        <div class="navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="flightInfo">Flights</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="dining">Dine</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="shopping">Shop</a>
+                </li>
+            </ul>
+
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="" id="languageDropdown" role="button"
+                       data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <img src="../static/images/UK_Flag.svg" alt="Language" class="rounded-circle flag-icon">
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="languageDropdown">
+                        <a class="dropdown-item" href="/">English</a>
+                        <a class="dropdown-item" href="en=it">Italian</a>
+                    </div>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="logout" id="userIconLink">
+                        <img src="../static/images/icon.png" alt="User" class="rounded-circle user-icon small-icon"
+                             id="userIcon">
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+
+<div id="background-slideshow">
+    <div class="background-slide active" style="background-image: url('../static/images/home_1.jpg');"></div>
+    <div class="background-slide" style="background-image: url('../static/images/home_2.jpg');"></div>
+    <div class="background-slide" style="background-image: url('../static/images/home_3.jpg');"></div>
+    <div class="background-slide" style="background-image: url('../static/images/home_4.jpeg');"></div>
+    <div class="background-slide" style="background-image: url('../static/images/home_5.jpeg');"></div>
+</div>
+
+<form class="search-form">
+    <input type="search" value="" placeholder="Search for flights" class="search-input">
+    <button type="submit" class="search-button">
+        <svg class="submit-button">
+            <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#search"></use>
+        </svg>
+    </button>
+    <div class="search-icons">
+        <button type="button" class="icon-button" data-tooltip="Arrival">
+            <svg class="icon-svg" xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 640 512">
+                <path d="M624 448H16c-8.84 0-16 7.16-16 16v32c0 8.84 7.16 16 16 16h608c8.84 0 16-7.16 16-16v-32c0-8.84-7.16-16-16-16zM44.81 205.66l88.74 80a62.607 62.607 0 0 0 25.47 13.93l287.6 78.35c26.48 7.21 54.56 8.72 81 1.36 29.67-8.27 43.44-21.21 47.25-35.71 3.83-14.5-1.73-32.71-23.37-54.96-19.28-19.82-44.35-32.79-70.83-40l-97.51-26.56L282.8 30.22c-1.51-5.81-5.95-10.35-11.66-11.91L206.05.58c-10.56-2.88-20.9 5.32-20.71 16.44l47.92 164.21-102.2-27.84-27.59-67.88c-1.93-4.89-6.01-8.57-11.02-9.93L52.72 64.75c-10.34-2.82-20.53 5-20.72 15.88l.23 101.78c.19 8.91 6.03 17.34 12.58 23.25z"/>
+            </svg>
+        </button>
+        <button type="button" class="icon-button" data-tooltip="Departure">
+            <svg class="icon-svg" xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 640 512"></style>
+                <path d="M624 448H16c-8.84 0-16 7.16-16 16v32c0 8.84 7.16 16 16 16h608c8.84 0 16-7.16 16-16v-32c0-8.84-7.16-16-16-16zM80.55 341.27c6.28 6.84 15.1 10.72 24.33 10.71l130.54-.18a65.62 65.62 0 0 0 29.64-7.12l290.96-147.65c26.74-13.57 50.71-32.94 67.02-58.31 18.31-28.48 20.3-49.09 13.07-63.65-7.21-14.57-24.74-25.27-58.25-27.45-29.85-1.94-59.54 5.92-86.28 19.48l-98.51 49.99-218.7-82.06a17.799 17.799 0 0 0-18-1.11L90.62 67.29c-10.67 5.41-13.25 19.65-5.17 28.53l156.22 98.1-103.21 52.38-72.35-36.47a17.804 17.804 0 0 0-16.07.02L9.91 230.22c-10.44 5.3-13.19 19.12-5.57 28.08l76.21 82.97z"/>
+            </svg>
+        </button>
+    </div>
+</form>
+
+<form class="API"></form>
+
+<div id="weather-container">
+    <!-- Weather information will be displayed here -->
+</div>
+
+<div class="container converter-container">
+    <h2 class="text-center mb-4">Convertitore Di Valuta</h2>
+    <div class="form-group">
+        <label for="fromCurrency">Dalla Valuta:</label>
+        <select class="form-control" id="fromCurrency">
+            <!-- Options will be dynamically added using JavaScript -->
+        </select>
+    </div>
+    <div class="form-group">
+        <label for="toCurrency">Alla Valuta:</label>
+        <select class="form-control" id="toCurrency">
+            <!-- Options will be dynamically added using JavaScript -->
+        </select>
+    </div>
+    <div class="form-group">
+        <label for="amount">Quantità:</label>
+        <input type="number" class="form-control" id="amount" placeholder="Enter amount">
+    </div>
+    <button class="btn btn-primary btn-block" onclick="convertCurrency()">Convertire</button>
+    <div class="result">
+        <h4>Risultato:</h4>
+        <p id="result"></p>
+    </div>
+</div>
+</form>
+
+<section class="section">
+    <div class="header">
+        <h2 class="highlights-title">Punti Salienti</h2>
+        <p class="highlights-subtitle">Scopri di più sugli ultimi eventi nel paese.</p>
+    </div>
+    <div class="carousel-container">
+        <button id="highlights-scroll-left" class="scroll-button left" aria-hidden="true">‹</button>
+        <div id="highlights-carousel" class="carousel">
+            <div class="list">
+                <div class="card"
+                     onclick="openPopup('Festival musicale di Beirut', 'Goditi il ​​vivace Festival musicale di Beirut, una spettacolare celebrazione dei talenti locali e internazionali. Tenutosi nel cuore della città, questo evento presenta un mix di generi, dalla musica tradizionale libanese ai ritmi contemporanei, offrendo un viaggio musicale attraverso il ricco arazzo culturale del Libano. Goditi spettacoli dal vivo, laboratori interattivi e un vivace mercato alimentare che mostra prelibatezze locali.', '../static/images/music_festival.jpg');">
+                    <img src="../static/images/music_festival.jpg" alt="Highlight Image">
+                    <div class="card-content">
+                        <h3 class="card-title">Festival musicale di Beirut</h3>
+                        <p class="card-description">Goditi il ​​vivace Festival musicale di Beirut, uno spettacolo
+                            celebrazione del talento locale e internazionale.</p>
+                    </div>
+                </div>
+
+                <div class="card"
+                     onclick="openPopup('Avventura escursionistica ai Cedri di Dio', 'Esplora i maestosi Cedri di Dio, patrimonio mondiale dell UNESCO nella regione di Bsharri. Partecipa a un escursione guidata attraverso queste antiche foreste, che ospitano alcuni dei cedri più antichi del mondo. L escursione offre viste mozzafiato sulle montagne e sulle valli circostanti, culminando in un picnic con prodotti locali.', '../static/images/cedars.jpg');">
+                    <img src="../static/images/cedars.jpg" alt="Highlight Image">
+                    <div class="card-content">
+                        <h3 class="card-title">Avventura escursionistica ai Cedri di Dio</h3>
+                        <p class="card-description">Esplora i maestosi Cedri di Dio, patrimonio mondiale dell'UNESCO
+                            la regione di Bsharri.</p>
+                    </div>
+                </div>
+                <div class="card"
+                     onclick="openPopup('Tour storici di Byblos', 'Torna indietro nel tempo con le visite storiche guidate di Byblos, una delle città più antiche del mondo abitate ininterrottamente. Scopri antiche rovine, templi fenici e fortezze medievali, ognuno dei quali racconta la ricca storia del Libano. Il tour include una visita all incantevole Byblos Souk, dove gli artigiani vendono artigianato tradizionale e souvenir.', '../static/images/byblos.jpg');">
+                    <img src="../static/images/byblos.jpg" alt="Highlight Image">
+                    <div class="card-content">
+                        <h3 class="card-title">Tour storici di Byblos</h3>
+                        <p class="card-description">Torna indietro nel tempo con le visite storiche guidate di Byblos,
+                            uno dei
+                            le più antiche città abitate ininterrottamente del mondo.</p>
+                    </div>
+                </div>
+                <div class="card"
+                     onclick="openPopup('Tour del vino e dei vigneti libanesi', 'Scopri le rinomate cantine del Libano con una visita guidata attraverso pittoreschi vigneti. Scopri le tecniche tradizionali di vinificazione e assaggia una varietà di vini locali, dai rossi robusti ai bianchi frizzanti. Il tour include visite a diverse aziende vinicole della valle della Bekaa, ognuna con la propria storia e il proprio profilo aromatico unici', '../static/images/wine.jpg');">
+                    <img src="../static/images/wine.jpg" alt="Highlight Image">
+                    <div class="card-content">
+                        <h3 class="card-title">Tour del vino e dei vigneti libanesi</h3>
+                        <p class="card-description">Scopri le rinomate cantine del Libano con una visita guidata
+                            vigneti pittoreschi. </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <button id="highlights-scroll-right" class="scroll-button right">›</button>
+    </div>
+</section>
+
+<section class="section">
+    <div class="carousel-container">
+        <button id="deals-scroll-left" class="scroll-button left" aria-hidden="true">‹</button>
+        <div id="deals-carousel" class="carousel">
+            <div class="list">
+                <div class="card"
+                     onclick="openPopup('Fuga gourmet a Beirut', 'Concedetevi un esperienza culinaria di lusso presso il ristorante più apprezzato di Beirut, Le Gourmet Libanais. Goditi un pasto di 5 portate con i migliori sapori mediterranei, con ogni piatto sapientemente realizzato da rinomati chef. Perfetto per occasioni speciali o serate sontuose.', '../static/images/getaway.jpg');">
+                    <img src="../static/images/getaway.jpg" alt="Highlight Image">
+                    <div class="card-content">
+                        <h3 class="card-title">Fuga gourmet a Beirut</h3>
+                        <p class="card-description">Concedetevi un'esperienza culinaria di lusso nei migliori ristoranti
+                            di Beirut
+                            ristorante, 'Le Gourmet Libanais'.</p>
+                        <p>Data d'inizio: 2023-12-01</p>
+                        <p>Data di fine: 2023-12-31</p>
+                    </div>
+                </div>
+
+                <div class="card"
+                     onclick="openPopup('Fuga storica da Byblos', 'Vivi il fascino dell antica Byblos con il nostro esclusivo pacchetto di weekend. Include una visita guidata ai siti storici, un soggiorno presso il boutique Byblos Hotel e una sessione di degustazione di vini gratuita con vini libanesi locali.', '../static/images/byblos2.jpg');">
+                    <img src="../static/images/byblos2.jpg" alt="Highlight Image">
+                    <div class="card-content">
+                        <h3 class="card-title">Fuga storica da Byblos</h3>
+                        <p class="card-description">Vivi il fascino dell'antica Byblos con il nostro esclusivo weekend
+                            pacchetto di fuga.</p>
+                        <p>Data d'inizio: 2023-12-05</p>
+                        <p>Data di fine: 2024-01-05</p>
+                    </div>
+                </div>
+                <div class="card"
+                     onclick="openPopup('Shopping sfrenato da VIP', 'Goditi un esperienza di shopping VIP nei quartieri della moda più esclusivi di Beirut. Questa offerta include assistenza personale per lo shopping, accesso a proiezioni private e uno sconto del 20% su tutti gli acquisti superiori a $ 500 presso le boutique di lusso partecipanti.', '../static/images/vip_shopping.webp');">
+                    <img src="../static/images/vip_shopping.webp" alt="Highlight Image">
+                    <div class="card-content">
+                        <h3 class="card-title">Shopping sfrenato da VIP</h3>
+                        <p class="card-description">Goditi un'esperienza di shopping VIP nella moda più esclusiva di
+                            Beirut
+                            quartieri.</p>
+                        <p>Data d'inizio: 2023-12-10</p>
+                        <p>Data di fine: 2024-01-10</p>
+                    </div>
+                </div>
+                <div class="card"
+                     onclick="openPopup('Avventura escursionistica sulle montagne di cedro', 'Parti per un esilarante avventura escursionistica nelle montagne dei cedri. Questo pacchetto include un trekking guidato, pernottamento in un eco-lodge e una cena tradizionale libanese sotto le stelle.', '../static/images/hiking.jpg');">
+                    <img src="../static/images/hiking.jpg" alt="Highlight Image">
+                    <div class="card-content">
+                        <h3 class="card-title">Avventura escursionistica sulle montagne di cedro</h3>
+                        <p class="card-description">Parti per un'esilarante avventura escursionistica nelle montagne dei
+                            cedri.</p>
+                        <p>Data d'inizio: 2023-12-15</p>
+                        <p>Data di fine: 2023-12-20</p>
+                    </div>
+                </div>
+                <div class="card"
+                     onclick="openPopup('Notte esclusiva all Opera', 'Vivi una serata indimenticabile al rinomato Teatro dell Opera di Beirut. Questo pacchetto esclusivo include posti a sedere premium per l ultima rappresentazione dell opera, un tour dietro le quinte e un incontro post-spettacolo con il cast.', '../static/images/opera.jpg');">
+                    <img src="../static/images/opera.jpg" alt="Highlight Image">
+                    <div class="card-content">
+                        <h3 class="card-title">Notte esclusiva all'Opera</h3>
+                        <p class="card-description">Vivi una serata indimenticabile alla rinomata Opera di Beirut
+                            Casa.</p>
+                        <p>Data d'inizio: 2023-12-20</p>
+                        <p>Data di fine: 2024-01-20</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <button id="deals-scroll-right" class="scroll-button right">›</button>
+    </div>
+    <div class="header">
+        <h2 class="deals-title">Offerte per te</h2>
+        <p class="deals-subtitle">Dalle esclusive ASM alle esperienze uniche, alle fantastiche offerte per ristoranti e
+            negozi,
+            C'è qualcosa per tutti.</p>
+    </div>
+</section>
+
+<div class="modal fade" id="popupModal" tabindex="-1" role="dialog" aria-labelledby="popupModalLabel"
+     aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="popupModalLabel"></h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <img src="" alt="Popup Image" id="popupImage" class="img-fluid mb-2">
+                <p id="popupModalBody"></p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="tab-container">
+    <div class="tab-buttons">
+        <button class="tab-button active" onclick="openTab(event, 'tab-Parking')">Parcheggio</button>
+        <button class="tab-button" onclick="openTab(event, 'tab-Hotel')">Hotel</button>
+        <button class="tab-button" onclick="openTab(event, 'tab-Flight')">Volo</button>
+        <div class="tab-indicator"></div>
+    </div>
+    <div class="tab-content" id="tab-Parking" style="display:none;">
+        <h2 class="mb-4">Ricerca del parco</h2>
+        <form>
+            <div class="form-row">
+                <div class="form-group col-md-6">
+                    <label for="fromDate">Dalla data</label>
+                    <input type="datetime-local" class="form-control" id="fromDate">
+                </div>
+                <div class="form-group col-md-6">
+                    <label for="toDate">Ad oggi</label>
+                    <input type="datetime-local" class="form-control" id="toDate">
+                </div>
+            </div>
+
+            <button type="submit" class="btn btn-primary">Ricerca</button>
+        </form>
+    </div>
+    <div class="tab-content" id="tab-Hotel" style="display:none;">
+        <h2 class="mb-4">Ricerca alberghi</h2>
+        <form>
+            <div class="form-row">
+                <div class="form-group col-md-8">
+                    <label for="location">Posizione</label>
+                    <input type="text" class="form-control" id="location"
+                           placeholder="e.g. country, city, district or landmark">
+                </div>
+            </div>
+
+            <div class="form-row">
+                <div class="form-group col-md-4">
+                    <label for="checkInDate">Data di arrivo</label>
+                    <input type="date" class="form-control" id="checkInDate">
+                </div>
+                <div class="form-group col-md-4">
+                    <label for="checkOutDate">Data di partenza</label>
+                    <input type="date" class="form-control" id="checkOutDate">
+                </div>
+            </div>
+
+            <div class="form-row">
+                <div class="form-group col-md-4">
+                    <label for="numberOfRooms">Numero di stanze</label>
+                    <div class="input-group">
+                        <div class="input-group-prepend">
+                            <button class="btn btn-outline-secondary" type="button" id="decrementRooms">-</button>
+                        </div>
+                        <input type="text" class="form-control" id="numberOfRooms" value="1">
+                        <div class="input-group-append">
+                            <button class="btn btn-outline-secondary" type="button" id="incrementRooms">+</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group col-md-4">
+                    <label for="numberOfAdults">Numero di adulti</label>
+                    <div class="input-group">
+                        <div class="input-group-prepend">
+                            <button class="btn btn-outline-secondary" type="button" id="decrementAdults">-</button>
+                        </div>
+                        <input type="text" class="form-control" id="numberOfAdults" value="1">
+                        <div class="input-group-append">
+                            <button class="btn btn-outline-secondary" type="button" id="incrementAdults">+</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group col-md-4">
+                    <label for="numberOfKids">Numero di bambini</label>
+                    <div class="input-group">
+                        <div class="input-group-prepend">
+                            <button class="btn btn-outline-secondary" type="button" id="decrementKids">-</button>
+                        </div>
+                        <input type="text" class="form-control" id="numberOfKids" value="0">
+                        <div class="input-group-append">
+                            <button class="btn btn-outline-secondary" type="button" id="incrementKids">+</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <button type="submit" class="btn btn-primary">Ricerca</button>
+        </form>
+    </div>
+    <div class="tab-content" id="tab-Flight" style="display:none;">
+        <h2 class="mb-4">Ricerca voli</h2>
+        <form>
+            <div class="form-row">
+                <div class="form-group col-md-4">
+                    <label for="from">Da</label>
+                    <input type="text" class="form-control" id="from" placeholder="Departure" autocomplete="off">
+                    <div id="searchResults" class="search-results"></div>
+                </div>
+                <div class="form-group col-md-4">
+                    <label for="to">A</label>
+                    <input type="text" class="form-control" id="to" placeholder="Destination" autocomplete="off">
+                    <div id="toSearchResults" class="search-results"></div>
+                </div>
+            </div>
+
+            <div class="form-row">
+                <div class="form-group col-md-4">
+                    <label class="mr-2">Tipo di viaggio:</label>
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" name="tripType" id="oneway" checked>
+                        <label class="form-check-label" for="oneway">Senso Unico</label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" name="tripType" id="return">
+                        <label class="form-check-label" for="return">Ritorno</label>
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-row">
+                <div class="form-group col-md-4">
+                    <label for="departDate">Data di partenza</label>
+                    <input type="date" class="form-control" id="departDate">
+                </div>
+                <div class="form-group col-md-4">
+                    <label for="returnDate">Data di ritorno</label>
+                    <input type="date" class="form-control" id="returnDate" disabled>
+                </div>
+            </div>
+
+            <button type="submit" class="btn btn-primary">Ricerca</button>
+        </form>
+    </div>
+</div>
+
+<footer class="site-footer">
+    <div class="footer-content">
+        <div class="footer-heading">
+            RESTA IN CONTATTO CON L'AEROPORTO ASM
+        </div>
+        <div class="footer-social">
+            <a class="fb" href="https://www.facebook.com"><img src="../static/images/FB2.png" alt="Faceboock"></a>
+            <a href="https://www.instagram.com"><img src="../static/images/insta.png" alt="Instagram"></a>
+            <a class="ln" href="https://www.linkedin.com"><img src="../static/images/linkin.png" alt="LinkedIn"></a>
+            <a class="tw" href="https://www.twitter.com"><img src="../static/images/tw.png" alt="Twitter"></a>
+            <a href="https://www.youtube.com"><img src="../static/images/yt.png" alt="YouTube"></a>
+        </div>
+        <div class="footer-links">
+            <div class="link-column">
+                <a href="#about-us">Chi siamo</a>
+                <a href="#contact">Contattaci</a>
+                <a href="#careers">Carriere</a>
+                <a href="#corporate">Aziendale</a>
+            </div>
+            <div class="link-column">
+                <a href="#faq">FAQs</a>
+                <button class="btn btn-primary" id="feedbackButton">Feedback</button>
+                <a href="#terms">Condizioni d'uso</a>
+                <a href="#privacy">Politica sulla riservatezza</a>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<div class="modal fade" id="feedbackModal" tabindex="-1" role="dialog" aria-labelledby="feedbackModalLabel"
+     aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="feedbackModalLabel">Feedback</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <form id="feedbackForm">
+                    <div class="form-group">
+                        <label for="rating">Valutazione:</label>
+                        <div class="rating-container">
+                            <span class="rating-star" data-rating="1">&#9733;</span>
+                            <span class="rating-star" data-rating="2">&#9733;</span>
+                            <span class="rating-star" data-rating="3">&#9733;</span>
+                            <span class="rating-star" data-rating="4">&#9733;</span>
+                            <span class="rating-star" data-rating="5">&#9733;</span>
+                        </div>
+                        <input type="hidden" id="rating" name="rating" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="comment">Commento (facoltativo):</label>
+                        <textarea class="form-control" id="comment" name="comment" rows="3"></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Invia</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<svg xmlns="http://www.w3.org/2000/svg" width="0" height="0" display="none">
+    <symbol id="search" viewBox="0 0 32 32">
+        <path d="M 19.5 3 C 14.26514 3 10 7.2651394 10 12.5 C 10 14.749977 10.810825 16.807458 12.125 18.4375 L 3.28125 27.28125 L 4.71875 28.71875 L 13.5625 19.875 C 15.192542 21.189175 17.250023 22 19.5 22 C 24.73486 22 29 17.73486 29 12.5 C 29 7.2651394 24.73486 3 19.5 3 z M 19.5 5 C 23.65398 5 27 8.3460198 27 12.5 C 27 16.65398 23.65398 20 19.5 20 C 15.34602 20 12 16.65398 12 12.5 C 12 8.3460198 15.34602 5 19.5 5 z"/>
+    </symbol>
+</svg>
+
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+<script src="../static/js/index.js"></script>
+<script src="../static/js/navbar.js"></script>
+</body>
+</html>

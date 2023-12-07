@@ -1,0 +1,266 @@
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Beirut International Airport</title>
+    <link rel="stylesheet" href="../static/css/index.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../static/css/perfume_haven.css">
+    <link rel="stylesheet" href="../static/css/navbar.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>     
+</head>
+
+
+<body>
+
+<nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+    <div class="container">
+        <a class="navbar-brand" href="/">ASM Airport</a>
+        <div class="navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="flightInfo">Flights</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="dining">Dine</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="shopping">Shop</a>
+                </li>
+            </ul>
+
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="" id="languageDropdown" role="button"
+                       data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <img src="../static/images/UK_Flag.svg" alt="Language" class="rounded-circle flag-icon">
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="languageDropdown">
+                        <a class="dropdown-item" href="/">English</a>
+                        <a class="dropdown-item" href="en=it">Italian</a>
+                    </div>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="wishlist">
+                        <img src="../static/images/heart-ico-navbar.png" alt="User" class="heart-ico">
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="logout" id="userIconLink">
+                        <img src="../static/images/icon.png" alt="User" class="rounded-circle user-icon small-icon"
+                             id="userIcon">
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+  <div id="image-container">
+    <img src="../static/images/perfume-haven-background.jpg" alt="Header Image">
+  </div>
+
+  <form class="search-form">
+    <input type="search" value="" placeholder="Search for perfumes" class="search-input">
+    <button type="submit" class="search-button">
+        <svg class="submit-button">
+            <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#search"></use>
+        </svg>
+    </button>
+
+  </form>
+
+<h2>For Him</h2>
+<section class="section">
+    <div class="carousel-container">
+        <button id="highlights-scroll-left" class="scroll-button left" aria-hidden="true">‹</button>
+        <div id="highlights-carousel" class="carousel">
+            <div class="list">
+                <div class="card">
+                    <img src="../static/images/perfume1-him.webp" alt="Highlight Image">
+                    <div class="card-content">
+                        <h3 class="card-title"> Atlas </h3>
+                        <p class="card-description"> Price <br> Stock </p>
+                        <button class="favorite-button" onclick="toggleFavorite(this)">❤</button>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <img src="../static/images/perfume2-him.jpg" alt="Highlight Image">
+                    <div class="card-content">
+                        <h3 class="card-title"> Zenith </h3>
+                        <p class="card-description"> Price <br> Stock </p>
+                        <button class="favorite-button" onclick="toggleFavorite(this)">❤</button>
+                    </div>
+                </div>
+                <div class="card">
+                    <img src="../static/images/perfume3-him.webp" alt="Highlight Image">
+                    <div class="card-content">
+                        <h3 class="card-title"> Wisk </h3>
+                        <p class="card-description"> Price <br> Stock </p>
+                        <button class="favorite-button" onclick="toggleFavorite(this)">❤</button>
+                    </div>
+                </div>
+                <div class="card">
+                    <img src="../static/images/perfume4-him.webp" alt="Highlight Image">
+                    <div class="card-content">
+                        <h3 class="card-title"> Rogue Essence </h3>
+                        <p class="card-description"> Price <br> Stock </p>
+                        <button class="favorite-button" onclick="toggleFavorite(this)">❤</button>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <img src="../static/images/perfume5-him.jpg" alt="Highlight Image">
+                    <div class="card-content">
+                        <h3 class="card-title"> Water Blues </h3>
+                        <p class="card-description"> Price <br> Stock </p>
+                        <button class="favorite-button" onclick="toggleFavorite(this)">❤</button>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <img src="../static/images/perfume6-him.jpg" alt="Highlight Image">
+                    <div class="card-content">
+                        <h3 class="card-title"> Vanguard </h3>
+                        <p class="card-description"> Price <br> Stock </p>
+                        <button class="favorite-button" onclick="toggleFavorite(this)">❤</button>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        <button id="highlights-scroll-right" class="scroll-button right">›</button>
+    </div>
+</section>
+
+<h2> For Her </h2>
+<section class="section">
+    <div class="carousel-container">
+        <button id="her-highlights-scroll-left" class="scroll-button left" aria-hidden="true">‹</button>
+        <div id="her-highlights-carousel" class="carousel">
+            <div class="list">
+                <div class="card">
+                    <img src="../static/images/perfume1-her.webp" alt="Highlight Image">
+                    <div class="card-content">
+                        <h3 class="card-title"> Flora </h3>
+                        <p class="card-description"> Price <br> Stock </p>
+                        <button class="favorite-button" onclick="toggleFavorite(this)">❤</button>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <img src="../static/images/perfume2-her.webp" alt="Highlight Image">
+                    <div class="card-content">
+                        <h3 class="card-title"> Aqua </h3>
+                        <p class="card-description"> Price <br> Stock </p>
+                        <button class="favorite-button" onclick="toggleFavorite(this)">❤</button>
+                    </div>
+                </div>
+                <div class="card">
+                    <img src="../static/images/perfume3-her.jpg" alt="Highlight Image">
+                    <div class="card-content">
+                        <h3 class="card-title"> Bloss Wood </h3>
+                        <p class="card-description"> Price <br> Stock </p>
+                        <button class="favorite-button" onclick="toggleFavorite(this)">❤</button>
+                    </div>
+                </div>
+                <div class="card">
+                    <img src="../static/images/perfume4-her.jpeg" alt="Highlight Image">
+                    <div class="card-content">
+                        <h3 class="card-title"> Peacock </h3>
+                        <p class="card-description"> Price <br> Stock </p>
+                        <button class="favorite-button" onclick="toggleFavorite(this)">❤</button>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <img src="../static/images/perfume5-her.jpg" alt="Highlight Image">
+                    <div class="card-content">
+                        <h3 class="card-title"> Crystal Majestia </h3>
+                        <p class="card-description"> Price <br> Stock </p>
+                        <button class="favorite-button" onclick="toggleFavorite(this)">❤</button>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <img src="../static/images/perfume6-her.jpg" alt="Highlight Image">
+                    <div class="card-content">
+                        <h3 class="card-title"> Moonlight </h3>
+                        <p class="card-description"> Price <br> Stock </p>
+                        <button class="favorite-button" onclick="toggleFavorite(this)">❤</button>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <img src="../static/images/perfume7-her.jpg" alt="Highlight Image">
+                    <div class="card-content">
+                        <h3 class="card-title"> Pinkie </h3>
+                        <p class="card-description"> Price <br> Stock </p>
+                        <button class="favorite-button" onclick="toggleFavorite(this)">❤</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <button id="her-highlights-scroll-right" class="scroll-button right">›</button>
+    </div>
+</section>
+
+<h2> Gift Sets </h2>
+
+<section class="section">
+    <div class="carousel-container">
+        <button id="gift-highlights-scroll-left" class="scroll-button left" aria-hidden="true">‹</button>
+        <div id="gift-highlights-carousel" class="carousel">
+            <div class="list">
+
+                <div class="card">
+                    <img src="../static/images/perfume4-him.webp" alt="Highlight Image">
+                    <div class="card-content">
+                        <h3 class="card-title">Card Title</h3>
+                        <p class="card-description">Some description here...</p>
+                        <button class="favorite-button" onclick="toggleFavorite(this)">❤</button>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <img src="../static/images/perfume3-him.webp" alt="Highlight Image">
+                    <div class="card-content">
+                        <h3 class="card-title">Card Title</h3>
+                        <p class="card-description">Some description here...</p>
+                        <button class="favorite-button" onclick="toggleFavorite(this)">❤</button>
+                    </div>
+                </div>
+                <div class="card">
+                    <img src="../static/images/perfume2-him.jpg" alt="Highlight Image">
+                    <div class="card-content">
+                        <h3 class="card-title">Card Title</h3>
+                        <p class="card-description">Some description here...</p>
+                        <button class="favorite-button" onclick="toggleFavorite(this)">❤</button>
+                    </div>
+                </div>
+                <div class="card">
+                    <img src="../static/images/perfume1-him.webp" alt="Highlight Image">
+                    <div class="card-content">
+                        <h3 class="card-title">Card Title</h3>
+                        <p class="card-description">Some description here...</p>
+                        <button class="favorite-button" onclick="toggleFavorite(this)">❤</button>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        <button id="gift-highlights-scroll-right" class="scroll-button right">›</button>
+    </div>
+</section>
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script src="../static/js/perfume_haven.js"></script>
+<script src="../static/js/navbar.js"></script>
+
+</body>
+</html>

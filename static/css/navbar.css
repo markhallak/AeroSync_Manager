@@ -1,0 +1,59 @@
+body {
+    margin: 0!important;
+    padding: 0!important;;
+  }
+
+  .navbar {
+    transition: background-color 0.5s, color 0.5s;
+  }
+
+  .navbar.transparent {
+      background-color: #333;
+      color: rgb(255, 255, 255);
+  }
+
+  .user-icon.small-icon {
+  width: 35px; 
+  height: 20px;
+  }
+
+  .heart-ico{
+    width: 25px; 
+    height: 25px;
+    float:right;
+    cursor: pointer;
+  }
+
+  .heart-ico:hover{
+    content: url(../images/red-heart-navbar.png);
+  }
+
+  .flag-icon.small-icon {
+    width: 30px; 
+    height: 30px;
+  }
+
+  .nav-item{
+      padding: 5px;
+  }
+
+  .container{
+    padding:0px 0px;
+  }
+
+  @media (max-width: 992px) {
+  .navbar-collapse {
+    display: flex !important;
+  }
+}
+
+ .heart-ico{
+    width: 25px;
+    height: 25px;
+    float:right;
+    cursor: pointer;
+  }
+
+  .heart-ico:hover{
+    content: url(../images/red-heart-navbar.png);
+  }

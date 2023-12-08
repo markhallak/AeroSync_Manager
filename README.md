@@ -1,12 +1,12 @@
 # AeroSync Manager
-In today’s interconnected world, the aviation
-industry plays a vital role in global travel, the need
-for our software translates through the following:
-- Sharing flight information in an accurate and
-timely manner.
-- Enhancing passengers’ airport experience.
-- Facilitating travel
-- and much more!
+  In today’s interconnected world, the aviation
+  industry plays a vital role in global travel, the need
+  for our software translates through the following:
+  - Sharing flight information in an accurate and
+  timely manner.
+  - Enhancing passengers’ airport experience.
+  - Facilitating travel
+  - and much more!
 
 # Features
 1. Realtime Information Changes
@@ -48,4 +48,13 @@ Other features include:
 - Hard to host for free since the system uses multithreading in the backend(for the flask app, the email service, and the socket connection) and socket connections to listen to database changes.
 
 # Frameworks & Libraries
-Flask, Pika, Supabase, Realtime
+  Flask, Pika, Supabase, Realtime, and Postgrest.
+
+# Installation
+  1. Clone this repo
+  2. `pip install -r requirements.txt`
+  3. Download RabbitMQ from `bbitmq.com/install-windows.html#installer` and make sure the service is running
+  4. Download Erlang from `https://www.erlang.org/downloads`
+  5. Run the `app.py` using the terminal
+  6. Enjoy!
+     

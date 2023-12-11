@@ -42,7 +42,7 @@ Other features include:
 - Handle cases where http requests fail to get sent to the server.
 - Implement CSRF Tokens.
 - Create friendly interfaces for the admin users to handle the data.
-- Refactor the code into modules making more possible to host such system on Vercel.
+- Refactor the code into modules making it more possible to host such system on Vercel.
 
 # Limitations
 - Hard to host for free since the system uses multithreading in the backend(for the flask app, the email service, and the socket connection) and socket connections to listen to database changes.
@@ -53,8 +53,8 @@ Other features include:
 # Installation
   1. Clone this repo
   2. `pip install -r requirements.txt`
-  3. Download RabbitMQ from `bbitmq.com/install-windows.html#installer` and make sure the service is running
-  4. Download Erlang from `https://www.erlang.org/downloads`
+  3. Download RabbitMQ from [`bbitmq.com/install-windows.html#installer`](bbitmq.com/install-windows.html#installer) and make sure the service is running
+  4. Download Erlang from [`https://www.erlang.org/downloads`](https://www.erlang.org/downloads)
   5. Run the `app.py` using the terminal
   6. Enjoy!
      

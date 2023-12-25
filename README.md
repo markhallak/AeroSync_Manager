@@ -9,11 +9,11 @@
   - and much more!
 
 # Features
-1. Realtime Information Changes
+1. Real-time Information Changes
 
 The website updates information automatically without manual page refreshes. This is essential for displaying up-to-date, reliable data, especially for time-sensitive content. The Supabase JS client facilitates real-time updates by monitoring database changes, enhancing the site's interactivity and responsiveness. On the backend, since the Supabase Python client doesn't support real-time listening, an alternative approach using a socket connection to the database was implemented to track updates, particularly in flight data.
 
-2. Track Flights
+2. Flight Tracking
 
 Users have the option to track any flight to stay informed about changes or cancellations. The system uses Pika, a direct implementation of the Advanced Message Queuing Protocol (AMQP), to efficiently send emails to recipients without heavily using system resources.
 

@@ -17,7 +17,7 @@ The website updates information automatically without manual page refreshes. Thi
 
 Users have the option to track any flight to stay informed about changes or cancellations. The system uses Pika, a direct implementation of the Advanced Message Queuing Protocol (AMQP), to efficiently send emails to recipients without heavily using system resources.
 
-2. Passwordless Signin
+2. password-free login
 
 A passwordless sign-in method has been introduced, allowing users to access the site either through their email or Google sign-in. For both new account creation and existing account access, a one-time-use verification link is sent to the registered email, streamlining the login or account verification process.
 

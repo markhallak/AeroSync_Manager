@@ -9,7 +9,7 @@
   - and much more!
 
 # Features
-1. Real-time Information Changes
+1. live updates
 
 The website updates information automatically without manual page refreshes. This is essential for displaying up-to-date, reliable data, especially for time-sensitive content. The Supabase JS client facilitates real-time updates by monitoring database changes, enhancing the site's interactivity and responsiveness. On the backend, since the Supabase Python client doesn't support real-time listening, an alternative approach using a socket connection to the database was implemented to track updates, particularly in flight data.
 
